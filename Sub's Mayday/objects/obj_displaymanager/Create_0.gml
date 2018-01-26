@@ -6,8 +6,8 @@ view_zoom=1;
 screenshake = 0;
 
 ideal_width = 0;
-ideal_height = 270;//540
-corresponding_width = 480;//960
+ideal_height = 540;//540 , 270
+corresponding_width = 960;//960 , 480
 
 globalvar display_width;
 globalvar display_height;
@@ -70,6 +70,7 @@ display_scale = (display_get_gui_width()/view_w);
 gui_mouse_x = (mouse_x - view_x)*display_scale;
 gui_mouse_y = (mouse_y - view_y)*display_scale;
 
-FollowObject = noone;
+FollowObject1 = obj_player1;
+FollowObject2 = obj_player2;
 
 room_goto_next();
