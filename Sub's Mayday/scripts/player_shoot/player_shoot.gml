@@ -34,14 +34,14 @@ if(hold_shoot and instance_exists(missile))
 	}
 }
 
-if(keyboard_check_released(k_shoot) and instance_exists(missile))
+if(keyboard_check_released(k_shoot) or !keyboard_check(k_shoot) and instance_exists(missile) and missile != noone)
 {
-	if(missile.can_damage_source)
+	with(missile)
 	{
-		 with(missile)
-		 {
-			current_state = state_activate;	 
-		 }	
+		if(can_damage_source)
+		{
+			current_state = state_activate;	
+		}
 	}
 	
 }
