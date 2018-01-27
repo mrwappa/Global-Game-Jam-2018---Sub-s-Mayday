@@ -9,20 +9,18 @@ if(current_state == state_travelling)
 	var player = instance_place(x,y,obj_player);
 	if(player and can_damage_source)
 	{
-		game_restart();
 		current_state = state_activate;
 		with(player)
 		{
-			color = c_white;
+			dead = true;
 		}
 	}
 	if(player and player.color != color)
 	{
-		game_restart();
 		current_state = state_activate;
 		with(player)
 		{
-			color = c_white;
+			dead = true;
 		}
 	}
 	

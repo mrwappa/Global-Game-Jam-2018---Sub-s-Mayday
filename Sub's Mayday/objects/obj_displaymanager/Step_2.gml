@@ -1,22 +1,13 @@
 /// @descriptions
 if(instance_exists(FollowObject1) and instance_exists(FollowObject2))
 {
-	//view_w = point_distance(FollowObject1.x,FollowObject1.y,FollowObject2.x,FollowObject2.y);
-	if(screenshake > 0)
-	{
-		/*screenshake = lerp(screenshake,0,0.27);
-		view_x = FollowObject1.x - (view_w/2) + choose(screenshake*choose(1,2),-screenshake*choose(1,2));
-		view_y = FollowObject1.y - (view_h/2) + choose(screenshake*choose(1,2),-screenshake*choose(1,2));*/
-	}
-	else
-	{
-		
-		/*view_x = FollowObject1.x - (view_w/2);
-		view_y = FollowObject1.y - (view_h/2);*/
-	}
+
+	var x_pos = FollowObject1.x + lengthdir_x(player_distance/2,point_direction(FollowObject1.x,FollowObject1.y,FollowObject2.x,FollowObject2.y))- view_w/2;
+	var y_pos = FollowObject1.y + lengthdir_y(player_distance/2,point_direction(FollowObject1.x,FollowObject1.y,FollowObject2.x,FollowObject2.y)) - view_h/2;
 	
-	view_x = FollowObject1.x + lengthdir_x(player_distance/2,point_direction(FollowObject1.x,FollowObject1.y,FollowObject2.x,FollowObject2.y))- view_w/2;
-	view_y = FollowObject1.y + lengthdir_y(player_distance/2,point_direction(FollowObject1.x,FollowObject1.y,FollowObject2.x,FollowObject2.y)) - view_h/2;
+	view_x = x_pos+ choose(screenshake*choose(1,2),-screenshake*choose(1,2));
+	view_y = y_pos+ choose(screenshake*choose(1,2),-screenshake*choose(1,2));
+	screenshake = lerp(screenshake,0,0.27);
 }
 else
 {

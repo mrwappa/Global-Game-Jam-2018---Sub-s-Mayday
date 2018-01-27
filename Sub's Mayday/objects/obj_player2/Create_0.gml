@@ -46,3 +46,7 @@ missile = noone;
 target = obj_player1;
 /*trap_list = ds_list_create();
 shoot_traps = true;*/
+
+dead = false;
+
+debree_list = ds_list_create();

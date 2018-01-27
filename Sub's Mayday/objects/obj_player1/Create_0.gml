@@ -44,7 +44,6 @@ key_shoot = ord("J");
 missile = noone;
 
 target = obj_player2;
-/*trap_list = ds_list_create();
-shoot_traps = true;
+dead = false;
 
-increment = 0;*/
+debree_list = ds_list_create();

@@ -7,10 +7,9 @@ if(image_index >= image_number - 1)
 var player = instance_place(x,y,obj_player);
 if(player)
 {
-	game_restart();
 	with(player)
 	{
-		color = c_white;
+		dead = true;
 	}
 }
 	

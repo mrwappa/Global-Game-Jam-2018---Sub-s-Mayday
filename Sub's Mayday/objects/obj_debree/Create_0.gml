@@ -1,3 +1,9 @@
 /// @description Insert description here
 // You can write your code in this editor
-ds_list_destroy(trap_list);
+_speed = 0;
+dir = 0;
+angle_speed = 0;
+
+color = c_white;
+
+sink = false;

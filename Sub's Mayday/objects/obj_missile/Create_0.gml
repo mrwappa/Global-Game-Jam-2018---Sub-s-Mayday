@@ -1,5 +1,5 @@
 /// @description
-alarm[0] = 20;
+alarm[0] = 15;
 //Appearance
 image_xscale = 1;
 image_yscale = image_xscale;
