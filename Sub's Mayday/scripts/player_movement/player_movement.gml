@@ -47,18 +47,41 @@ var counter_clockwise = keyboard_check(k_counter);
 
 var rotation = clockwise - counter_clockwise;
 
-if(rotation == 0)
+if(rotation == 0 )
 {
-	rotation_speed = lerp(rotation_speed,0,0.1);
+	rotation_speed = lerp(rotation_speed,0,0.8);
 }
-else
+else if(rotation != 0 and !keyboard_check(key_shoot))
 {
 	rotation_speed = lerp(rotation_speed,turn_speed*rotation,0.007);	
 }
-
+if(keyboard_check(key_shoot))
+{
+	rotation_speed = 0;
+	//normalisera(2 - 1:an)
+	
+	var p_angle_x = dcos(-image_angle);
+	var p_angle_y = dsin(-image_angle);
+	
+	var deltax = target.x - x;
+	var deltay = target.y - y;
+	var distance = point_distance(x,y,target.x,target.y);
+	var angle_x = deltax / distance;
+	var angle_y = deltay / distance;
+	
+	p_angle_x = lerp(p_angle_x, angle_x, 0.4);
+	p_angle_y = lerp(p_angle_y, angle_y, 0.4);
+	
+	image_angle = point_direction(0,0,p_angle_x,p_angle_y);
+	/*if(abs(image_angle - point_direction(x,y,target.x,target.y) < 10))
+	{
+		image_angle = point_direction(x,y,target.x,target.y);
+	}*/
+}
 image_angle += rotation_speed;
 
 //everything below here is appearance for the propellers
+//also this is extremely ugly, prepare for nestled if statement puke
 var turnTop = false;
 var turnBottom = false;
 
@@ -136,8 +159,8 @@ with(bot_propeller)
 	{
 		if(scale_plus)
 		{
-			image_xscale += wingspeed;
-			if(image_xscale >= 1)
+			image_yscale += wingspeed;
+			if(image_yscale >= 1)
 			{
 				scale_plus = false;
 				scale_minus = true;
@@ -145,20 +168,20 @@ with(bot_propeller)
 		}
 		else if(scale_minus)
 		{
-			image_xscale -= wingspeed;
-			if(image_xscale <= -1)
+			image_yscale -= wingspeed;
+			if(image_yscale <= -1)
 			{	
 				scale_minus = false;
 				scale_plus = true;
 			}
 		}
 	}
-	else if(turnBottom = false)
+	else if(turnBottom == false)
 	{
 		if(scale_plus)
 		{
-			image_xscale += wingspeed/10;
-			if(image_xscale >= 1)
+			image_yscale += wingspeed/10;
+			if(image_yscale >= 1)
 			{
 				scale_plus = false;
 				scale_minus = true;
@@ -166,21 +189,21 @@ with(bot_propeller)
 		}
 		else if(scale_minus)
 		{
-			image_xscale -= wingspeed/10;
-			if(image_xscale <= -1)
+			image_yscale -= wingspeed/10;
+			if(image_yscale <= -1)
 			{	
 				scale_minus = false;
 				scale_plus = true;
 			}
 		}
 	}
-	image_xscale = clamp(image_xscale,-1,1);
+	image_yscale = clamp(image_yscale,-1,1);
 	image_yscale = clamp(image_yscale,-1,1);
 	
-	var yoffset,xoffset;
+	//var yoffset,xoffset;
 	image_angle = other.image_angle;
 	
-	if(image_xscale > 0)
+	/*if(image_yscale > 0)
 	{
 		var xoffset = lengthdir_x(0, image_angle);
 		var yoffset = lengthdir_y(0, image_angle);
@@ -189,12 +212,12 @@ with(bot_propeller)
 	{
 		
 		
-		var xoffset = lengthdir_x(1, image_angle);
-		var yoffset = lengthdir_y(1, image_angle);
-	}
+		var xoffset = lengthdir_x(0, image_angle);
+		var yoffset = lengthdir_y(0, image_angle);
+	}*/
 	
-	x = other.x + xoffset;
-	y = other.y + yoffset;
+	x = other.x; //+ xoffset;
+	y = other.y; //+ yoffset;
 
 }
 
@@ -205,8 +228,8 @@ with(top_propeller)
 	{
 		if(scale_plus)
 		{
-			image_xscale += wingspeed;
-			if(image_xscale >= 1)
+			image_yscale += wingspeed/80;
+			if(image_yscale >= 1)
 			{
 				scale_plus = false;
 				scale_minus = true;
@@ -214,20 +237,20 @@ with(top_propeller)
 		}
 		else if(scale_minus)
 		{
-			image_xscale -= wingspeed;
-			if(image_xscale <= -1)
+			image_yscale -= wingspeed/80;
+			if(image_yscale <= -1)
 			{	
 				scale_minus = false;
 				scale_plus = true;
 			}
 		}
 	}
-	else if(turnTop = false)
+	else if(turnTop == false)
 	{
 		if(scale_plus)
 		{
-			image_xscale += wingspeed/10;
-			if(image_xscale >= 1)
+			image_yscale += wingspeed/80;
+			if(image_yscale >= 1)
 			{
 				scale_plus = false;
 				scale_minus = true;
@@ -235,8 +258,8 @@ with(top_propeller)
 		}
 		else if(scale_minus)
 		{
-			image_xscale -= wingspeed/10;
-			if(image_xscale <= -1)
+			image_yscale -= wingspeed/80;
+			if(image_yscale <= -1)
 			{	
 				scale_minus = false;
 				scale_plus = true;
@@ -244,24 +267,24 @@ with(top_propeller)
 		}
 	}
 
-	image_xscale = clamp(image_xscale,-1,1);
+	image_yscale = clamp(image_yscale,-1,1);
 	image_yscale = clamp(image_yscale,-1,1);
 	
-	var yoffset,xoffset;
+	//var yoffset,xoffset;
 	image_angle = other.image_angle;
 	
-	if(image_xscale > 0)
+	/*if(image_yscale > 0)
 	{
 		var xoffset = lengthdir_x(0, image_angle);
 		var yoffset = lengthdir_y(0, image_angle);
 	}
 	else
 	{
-		var xoffset = lengthdir_x(1, image_angle);
-		var yoffset = lengthdir_y(1, image_angle);
-	}
+		var xoffset = lengthdir_x(0, image_angle);
+		var yoffset = lengthdir_y(0, image_angle);
+	}*/
 	
-	x = other.x + xoffset;
-	y = other.y + yoffset;
+	x = other.x; //+ xoffset;
+	y = other.y;//+ yoffset;
 
 }
