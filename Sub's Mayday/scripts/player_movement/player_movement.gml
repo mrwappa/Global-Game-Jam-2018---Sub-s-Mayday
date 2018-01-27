@@ -36,6 +36,9 @@ if!(axis_x == 0 and axis_y == 0)
 x+= axis_x;
 y+= axis_y;
 
+x = clamp(x,view_x + sprite_width /2,view_x+view_w - sprite_width/2);
+y = clamp(y,view_y + sprite_height /2,view_y+view_h - sprite_height /2);
+
 //rotation
 var k_clockwise = argument4;
 var k_counter = argument5;

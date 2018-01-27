@@ -18,7 +18,7 @@ with(bot_propeller)
 
 //Movement
 movement_speed = 5;
-turn_speed = 20;
+turn_speed = 15;
 rotation_speed = 0;
 axis_x = 0;
 axis_y = 0;
