@@ -39,14 +39,6 @@
             }
         },
         {
-            "Key": "04d104f0-d371-49f5-8ade-dcd209e8a55a",
-            "Value": {
-                "id": "0b87779f-866e-4aea-9d9c-a069b90e18cf",
-                "resourcePath": "objects\\obj_zap\\obj_zap.yy",
-                "resourceType": "GMObject"
-            }
-        },
-        {
             "Key": "123e08f6-ada2-485f-a31d-28227c85f89a",
             "Value": {
                 "id": "cecc84ee-a5c0-4bba-96df-cfacd82f30fb",

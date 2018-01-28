@@ -1,4 +1,4 @@
-if scale >= 1 instance_destroy()
+if scale >= max_scale instance_destroy()
 scale += 0.05
 
 

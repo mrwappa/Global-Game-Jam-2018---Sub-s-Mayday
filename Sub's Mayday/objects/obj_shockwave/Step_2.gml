@@ -1,2 +1,2 @@
-if length > 96 instance_destroy()
+if length > 58 instance_destroy()
 else length += 2

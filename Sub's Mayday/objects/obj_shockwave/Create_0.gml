@@ -1,6 +1,6 @@
 depth = -1000
 
-length = 48
+length = 38 //48
 
 shockwavePosition = shader_get_uniform(sh_shockwave, "shockwavePosition")
 lengthValue = shader_get_uniform(sh_shockwave, "lengthValue")

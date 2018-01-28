@@ -14,6 +14,18 @@ if(shooting and !instance_exists(missile))
 		dir = other.image_angle;
 		image_angle = dir;
 	}
+	for (var i = 0; i < 4; ++i) 
+	{
+	    beam = instance_create(x-lengthdir_x(sprite_width/1.2, image_angle - 180), y-lengthdir_y(sprite_width/1.2, image_angle - 180), obj_lol) 	
+	
+		beam.angle = image_angle - 90
+		beam.max_scale = 1 / i;
+		beam.x_spd = lengthdir_x(8/i, image_angle)
+		beam.y_spd = lengthdir_y(8/i, image_angle)
+		
+		beam.colour = color
+	}
+	
 }
 if(hold_shoot and instance_exists(missile))
 {

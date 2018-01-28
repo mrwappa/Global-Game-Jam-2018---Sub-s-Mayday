@@ -55,7 +55,7 @@ if(current_state == state_activate)
 	var explosion = instance_create(x,y,obj_explosion);
 	with(explosion)
 	{
-		image_speed = 2;
+		image_speed = 1.5;
 	}
 	instance_destroy();
 }

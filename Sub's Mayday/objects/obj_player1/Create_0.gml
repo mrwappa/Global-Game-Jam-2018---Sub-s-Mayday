@@ -1,5 +1,5 @@
 /// @description 
-
+depth = 99;
 //Appearance
 color = c_red;
 bot_propeller = instance_create(x,y,obj_propeller);

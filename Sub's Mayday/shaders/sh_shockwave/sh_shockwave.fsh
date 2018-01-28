@@ -11,11 +11,11 @@ void main()
 	
 	vec4 c = vec4(0.0);//texture2D( gm_BaseTexture, v_vTexcoord );
 	
-	if(dis <= lengthValue && dis >= lengthValue - (32.0 - dis*0.25) )
+	if(dis <= lengthValue && dis >= lengthValue - (20.0 - dis*0.25) )
 	{
 		vec2 dir = normalize((v_vTexcoord*resolution) - shockwavePosition);
 		
-		c = texture2D( gm_BaseTexture, v_vTexcoord - dir*0.1);
+		c = texture2D( gm_BaseTexture, v_vTexcoord - dir*0.05);
 	}
 	
     gl_FragColor = c;
