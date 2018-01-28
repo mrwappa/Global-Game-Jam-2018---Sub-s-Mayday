@@ -8,7 +8,7 @@ if flipped =-1 x = view_x + view_w+64
 
 y = random_range(view_y-32, view_y + view_h+32)
 
-x_spd = flipped*4/depth
+x_spd = flipped*2/depth
 
 //if flipped = -1 x = room_width + room_width/depth
 //else x = -room_width/depth

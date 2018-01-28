@@ -1,10 +1,10 @@
 if flipped = 1 {
-	if x > view_x + view_w {
+	if x - depth*64 > view_x + view_w {
 		instance_destroy()	
 	}
 }	
 if flipped =-1 {
-	if x < view_x {
+	if x + depth*64 < view_x {
 		instance_destroy()	
 	}
 }	

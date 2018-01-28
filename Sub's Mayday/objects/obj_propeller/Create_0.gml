@@ -6,3 +6,5 @@ color = c_white;
 
 scale_plus = true;
 scale_minus = false;
+
+turn_value = 0;

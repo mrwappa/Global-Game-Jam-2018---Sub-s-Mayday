@@ -19,6 +19,10 @@ if(missile)
 {
 	with(missile)
 	{
-		current_state = state_activate;
+		turn = choose(1,-1);
 	}
+	/*with(missile)
+	{
+		current_state = state_activate;
+	}*/
 }

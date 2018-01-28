@@ -28,12 +28,23 @@ if(current_state == state_travelling)
 	var missile = instance_place(x,y,obj_missile);
 	if(missile and missile.id != id)
 	{
+		
 		current_state = state_activate;
 		with(missile)
 		{
 			current_state = state_activate;
 		}
+	
 	}
+	
+	if(turn != 0)
+	{
+		image_angle += 15*turn;
+		if(alarm[1] == -1)
+		{
+			alarm[1] = 8;	
+		}
+	}	
 }
 if(current_state == state_idle)
 {

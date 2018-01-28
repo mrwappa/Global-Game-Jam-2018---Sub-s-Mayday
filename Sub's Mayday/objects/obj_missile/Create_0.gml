@@ -8,12 +8,15 @@ color = c_white;
 //Movement
 dir = 0;
 _speed = 0;
+turn = 0;
 
 circle_interval = 0.3;
 circle_cooldown = 0;
 
 knockback_dir = 0;
 knockback_speed = 0;
+
+
 
 //States
 enum mine_state
