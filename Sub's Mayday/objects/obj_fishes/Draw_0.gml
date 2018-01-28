@@ -1,4 +1,4 @@
-draw_sprite_ext(spr_fishes, spr, dx,dy, flipped*4/depth, 4/depth, 0, c_white, 1/depth)
+draw_sprite_ext(spr_fishes, spr, x,y, -flipped/depth*2, 1/depth*2, 0, c_white, 1/depth)
 
 //draw_sprite(spr_fishes, spr, dx, dy)
 

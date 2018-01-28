@@ -1,11 +1,19 @@
-//x += (flipped*16)/depth
+if flipped = 1 {
+	if x > view_x + view_w {
+		instance_destroy()	
+	}
+}	
+if flipped =-1 {
+	if x < view_x {
+		instance_destroy()	
+	}
+}	
 
-//dx = ((x - obj_controller.x) / z + room_width) - x
-//dy = ((y - obj_controller.y) / z + room_height) - y
-
-dx = ((x-(view_x + view_w*0.5)) / depth + room_width)
-dy = ((y-(view_y + view_h*0.5)) / depth + room_height)
+x += x_spd
 
 i = random_range(0,10)
 
-//if i > 9.92 instance_create_depth(x , y, depth + 1, obj_bubble)
+if i > 9.92 {
+	b = instance_create_depth(x + ((32/depth)*flipped) , y, depth, obj_bubble)
+	b.z = depth
+}

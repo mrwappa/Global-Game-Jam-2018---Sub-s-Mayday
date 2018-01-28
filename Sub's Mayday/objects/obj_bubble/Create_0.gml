@@ -7,3 +7,5 @@ spd = random_range(0.2, 1)
 
 x_spd = 0
 y_spd = 0
+
+z = 1
