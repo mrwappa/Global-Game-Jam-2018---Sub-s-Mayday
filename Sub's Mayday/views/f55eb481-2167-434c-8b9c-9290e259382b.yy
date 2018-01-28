@@ -10,7 +10,8 @@
         "56782c6f-3dc2-4bb3-83fa-c5a63a511117",
         "5518ebf3-bf26-45d4-8b65-9e5856a99cfd",
         "8494cf82-9e74-4654-92c1-e015ab1ed107",
-        "489125c3-db53-4262-8dcb-29e4fe4715ca"
+        "489125c3-db53-4262-8dcb-29e4fe4715ca",
+        "a5735b47-5ddd-4bf3-9147-e7b6e76b6b9b"
     ],
     "filterType": "GMSprite",
     "folderName": "Missile",

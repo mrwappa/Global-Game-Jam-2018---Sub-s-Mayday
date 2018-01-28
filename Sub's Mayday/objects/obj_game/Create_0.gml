@@ -7,3 +7,6 @@ paused_ = false;
 pause_sprite_ = noone;
 
 room_speed = 60;
+
+
+

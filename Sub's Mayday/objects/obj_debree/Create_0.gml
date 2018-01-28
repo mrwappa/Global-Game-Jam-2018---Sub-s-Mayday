@@ -7,3 +7,4 @@ angle_speed = 0;
 color = c_white;
 
 sink = false;
+

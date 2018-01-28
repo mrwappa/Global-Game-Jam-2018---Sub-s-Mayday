@@ -47,3 +47,6 @@ target = obj_player2;
 dead = false;
 
 debree_list = ds_list_create();
+
+
+frame = true

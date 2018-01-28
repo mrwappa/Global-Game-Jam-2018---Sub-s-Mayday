@@ -32,3 +32,5 @@ current_state = state_travelling;
 can_damage_source = false;
 
 circle = noone;
+
+frame = true

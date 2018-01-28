@@ -64,3 +64,6 @@ x += lengthdir_x(knockback_speed,knockback_dir);
 y += lengthdir_y(knockback_speed,knockback_dir);
 
 knockback_speed = lerp(knockback_speed,0,0.1);
+
+frame =! frame	
+if frame instance_create(x-lengthdir_x(sprite_width/1.2, image_angle), y-lengthdir_y(sprite_width/1.2, image_angle), obj_bubble) 
